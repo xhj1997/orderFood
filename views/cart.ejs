@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<link rel="stylesheet" href="//at.alicdn.com/t/font_969465_8tw8yni6pva.css" />
+		<link rel="stylesheet" href="/css/layui.css" />
+		<script src="/jquery.min.js"></script>
+		<script src="/layui.js"></script>
+		<title>Document</title>
+		<style>
+			/*.cart-top {
+				width: 100%;
+				height: 500px;
+				display: flex;
+			}*/
+			/*.cart-top .cart-top-left {
+				flex: 1;
+				border: 1px solid #ccc;
+				margin-right: 100px;
+			}
+			
+			.cart-top .cart-top-right {
+				flex: 1;
+			}
+			
+			.cart-top-right>div .title {
+				font-weight: normal;
+				color: #585858;
+				margin: 0;
+				font-size: 20px;
+			}
+			
+			.cart-top-right>div {
+				margin-top: 40px;
+				height: 40px;
+			}
+			
+			.cart-top-right>div:nth-child(2) {
+				width: 400px;
+				border-bottom: 1px solid #ccc;
+				margin-left: 20px;
+				padding-bottom: 30px;
+			}
+			
+			.cart-top-right>div:nth-child(3) {
+				width: 400px;
+				border-bottom: 1px solid #ccc;
+				margin-left: 20px;
+			}
+			
+			.cart-top-right>div>p {
+				font-size: 14px;
+				font-family: "微软雅黑";
+				display: inline-block;
+			}
+			
+			.cart-top-right>div>span {
+				font-size: 40px;
+				font-weight: bold;
+				font-family: Arial;
+				color: #ffc001;
+			}
+			
+			.cart-top-right>div>span>i {
+				font-size: 14px;
+				color: #999;
+				font-family: inherit;
+				text-decoration: line-through;
+			}
+			
+			.cart-top-right>div>form {
+				height: 50px;
+				display: inline-block;
+				transform: translate(0, -25%);
+				margin-left: 10px;
+			}
+			
+			.cart-top-right>div>form .amount {
+				width: 45px;
+				height: 30px;
+				line-height: 30px;
+				border-color: #eee;
+				text-align: center;
+				display: inline-block;
+			}
+			
+			.cart-top-right>div>form>input {
+				border: 1px solid #eee;
+				width: 15px;
+				height: 15px;
+				font-size: 12px;
+				padding-left: 2px;
+			}
+			
+			.cart-top-right>div>form>input:first-child {
+				transform: translate(0, 25%);
+			}
+			
+			.cart-top-right>div>form>input:last-child {
+				transform: translate(-125%, 125%);
+			}
+			
+			.cart-top-right>div>a {
+				display: inline-block;
+				width: 160px;
+				height: 40px;
+				border: 1px solid #ccc;
+				font-family: "微软雅黑";
+				font-size: 16px;
+				font-weight: normal;
+				text-decoration: none;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.cart-top-right>div>a:first-child {
+				background-color: #fff;
+				color: #ffc001;
+			}
+			
+			.cart-top-right>div>a:last-child {
+				background-color: #ffc001;
+				color: #fff;
+			}*/
+			
+			.cart-bottm {
+				height: 340px;
+				position: relative;
+			}
+			
+			.cart-bottm .subtotal {
+				/*position: relative;*/
+				/*height: 50px;*/
+			}
+			
+			.cart-bottm .finalPrice {
+				/*position: relative;*/
+				/*height: 50px;*/
+			}
+			
+			.cart-bottm .subtotal>p {
+				/*position: absolute;*/
+				/*right: 40px;*/
+			}
+			
+			.cart-bottm .subtotal>p:first-child {
+				top: 20px;
+			}
+			
+			.cart-bottm .subtotal>p:last-child {
+				top: 50px;
+			}
+			
+			.cart-bottm .finalPrice>div>p {
+				display: inline-block;
+			}
+			
+			.cart-bottm .finalPrice>div>span {
+				font-size: 40px;
+				font-weight: bold;
+				font-family: Arial;
+				color: #ffc001;
+			}
+			
+			.cart-bottm .finalPrice>div {
+				/*position: absolute;
+				right: 120px;
+				top: 90px;*/
+			}
+			
+			.cart-bottm .bottom-btn>a {
+				display: inline-block;
+				width: 160px;
+				height: 40px;
+				border: 1px solid #ccc;
+				font-family: "微软雅黑";
+				font-size: 16px;
+				font-weight: normal;
+				text-decoration: none;
+				text-align: center;
+				line-height: 40px;
+				/*position: absolute;
+				bottom: 0;
+				right: 20px;*/
+			}
+			
+			.cart-bottm .bottom-btn>a:first-child {
+				background-color: #fff;
+				color: #ffc001;
+				/*right: 200px;*/
+			}
+			
+			.cart-bottm .bottom-btn>a:last-child {
+				background-color: #ffc001;
+				color: #fff;
+			}
+			
+			.cart-bottm .box {
+				position: absolute;
+				right: 20px;
+				text-align: right;
+			}
+		</style>
+		<link type="text/css" rel="stylesheet" href="/css/head.css">
+	</head>
+
+	<body>
+		<!--<div>
+			<div class="header-first">
+        <div class="header-left">
+               <a href="/register">注册</a>
+               <a href="/login">登录</a>
+               <a href="#">
+                <svg aria-hidden="true" style="width:10px;height:10px;">
+                    <use xlink:href="#icon-weixin"></use>
+                </svg>
+                微信登录</a>
+        </div>
+        <div class="header-right">
+            <a href="#">
+                <i class="iconfont icon-shouji"></i>
+                手机版
+            </a>
+            <a href="#">
+                    <i class="iconfont icon-aixin"></i>
+                收藏本站</a>
+            <a href="#">我的资料</a>
+            <a href="#">我的订单</a>
+            <a href="#">
+                <i class="iconfont icon-gouwuche1"></i>
+                购物车</a>
+        </div>
+        <div class="header-second">
+            <div class="left">
+                <img src="/images/pizza/AD0IycmHCBAEGAAgueDS2AUotPKI2AQwQjhC.png">
+                <div>
+                    <p>Caterings</p>
+                    <p>Design</p>
+                </div>
+                <span>上乘食材 非凡品质</span>
+            </div>
+            <div class="right">
+                <div>
+                    <p>订购热线</p>
+                    <p>020-000000000</p>
+                </div>
+               <img src="/images/pizza/AD0IycmHCBAEGAAgueHS2AUo-KXzgQYwXzhY.png">
+               
+            </div>
+        </div>
+    </div>
+		</div>-->
+		<div class="cart-bottm">
+			<div class="layui-form">
+				<table class="layui-table">
+					<thead>
+						<tr>
+							<th>名称</th>
+							<th>价格</th>
+							<th>数量</th>
+							<th>小计</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%for(var i=0;i<arr.length;i++){%>
+						<tr>
+							<td> <input type=checkbox value="1">
+								<%= arr[i].Fname %>
+							</td>
+							<td class="price">￥
+								<%= arr[i].Fprice %>
+							</td>
+							<td>
+								<form>
+									<input class="jian" type=button value="-">
+									<input class="number" min="1" max="3" type="text" name=amount value="1" class="amount" style="width: 45px;">
+									<input class="jia" type=button value="+">
+								</form>
+							</td>
+							<td class="eachsum">￥
+								<%= arr[i].Fprice %> .00
+							</td>
+							<td>
+								<a href="javascript:;" class="delete" data-id="<%= arr[i]._id %>">删除</a>
+							</td>
+						</tr>
+						<%}%>
+					</tbody>
+				</table>
+				<div class="box">
+					<div class="subtotal">
+						<p>商品总金额 ： ￥<span class="allPrices">68.00</span>.00</p>
+						<p>优惠金额 ： ￥00.00</p>
+					</div>
+					<div class="finalPrice">
+						<div>
+							<p>应付金额:</p><span>￥<span class="allPrices">0.00</span>.00</span>
+						</div>
+					</div>
+					<div class="bottom-btn" id="layerDemo">
+						<a href="/">继续购物</a>
+						<a href="javascript:;" data-method="offset" data-type="auto" class="btn_click">结算订单</a>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<!--<div class="cart-top">
+			<div class="cart-top-left">
+				<img src="http://16901321.s61i.faiusr.com/4/AD0IycmHCBAEGAAgguDT2AUo2O28uAcw1gM41gM.png" alt="" />
+			</div>
+			<div class="cart-top-right">
+				<div>
+					<p class="title">烟肉披萨 </p>
+				</div>
+				<div>
+					<p>价格:</p> &nbsp;&nbsp;&nbsp;<span>￥100 <i style="font-style:normal">100</i> </div>
+				<div><p>销量 : 78</p></div>
+				<div><p>购买数量 </p>
+					<form>
+				<input type=text name=amount value=1 class="amount">
+				<input type=button value="+" onClick="javascript:this.form.amount.value++;">
+				<input type=button value="-" onClick="javascript:this.form.amount.value--;">
+				</form>
+				</div>
+				<div>
+					<a href=""><i class="layui-icon layui-icon-cart"></i>  加入购物车</a>
+					<a href="">立即购买</a>
+				</div>
+		</div>
+	</div>-->
+		<!--<% include footer.ejs %>-->
+	</body>
+	<script src="/layui.js"></script>
+
+	<script>
+		//删除操作
+		$(".delete").click(function(e) {
+			var id = e.target.dataset.id;
+			console.log(id);
+			$.get("/deleteData", {
+				id: id
+			}, function(res) {
+				console.log(res);
+				location.href = "/cart";
+			})
+		})
+
+		$(".jian").click(function() {
+			var number = $(this).next();
+			number.val(number.val() - 1);
+			if(number.val() <= 0) {
+				number.val(parseInt(number.val()) + 1);
+			}
+			for(var i = 0; i < $("tbody>tr").length; i++) {
+				if($(this).parent().parent().parent().get(0) == $("tbody>tr")[i]) {
+					$price = $(this).parent().parent().prev("td.price").html().replace("￥", "");
+					$eachSum = $price * number.val();
+					$(this).parent().parent().next("td.eachsum").html("￥" + $eachSum + ".00");
+				};
+			}
+			updataMoney();
+		})
+
+		$(".jia").click(function() {
+			var number = $(this).prev();
+			number.val(parseInt(number.val()) + 1);
+			for(var i = 0; i < $("tbody>tr").length; i++) {
+				if($(this).parent().parent().parent().get(0) == $("tbody>tr")[i]) {
+					$price = $(this).parent().parent().prev("td.price").html().replace("￥", "");
+					$eachSum = $price * number.val();
+					$(this).parent().parent().next("td.eachsum").html("￥" + $eachSum + ".00");
+				};
+			}
+			updataMoney();
+		})
+
+		//计算价格总和
+		function updataMoney() {
+			var num = 0;
+			var allPrice = document.querySelectorAll(".eachsum");
+			var allPrices = document.querySelectorAll(".allPrices");
+			for(var i = 0; i < allPrice.length; i++) {
+				//		console.log(allPrice[i]);
+				//		console.log(allPrice[i].innerText)
+				var a = parseInt(allPrice[i].innerText.replace("￥", ""));
+				// 		console.log(a);
+				num += a;
+			}
+			//	console.log(num);
+			for(var i = 0; i < allPrices.length; i++) {
+				allPrices[i].innerText = num;
+			}
+		}
+		updataMoney();
+		//数量增减功能
+		//	var jians=document.querySelectorAll('.jian');
+		//	console.log(jians.length);
+		//	for(var i=0;i<jians.length;i++){
+		//		jians[i].onclick=function(){
+		//			if(this.)
+		//		}
+		//	}
+
+		layui.use('layer', function() { //独立版的layer无需执行这一句
+			var $ = layui.jquery,
+				layer = layui.layer; //独立版的layer无需执行这一句
+
+			//触发事件
+			var active = {
+				offset: function(othis) {
+					var type = othis.data('type'),
+						text = othis.text();
+
+					layer.open({
+					 	time: 5000,
+						type: 1,
+						offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+							,
+						id: 'layerDemo' + type //防止重复弹出
+							,
+						content: '<div style="padding: 20px 100px;">' + "订单结算成功"+ '</div>',
+						btn: '关闭全部',
+						btnAlign: 'c' //按钮居中
+							,
+						shade: 1 //不显示遮罩
+							,
+						yes: function() {
+							layer.closeAll();
+							$("tbody").html("");
+							location.href = "/";
+						}
+					});
+				}
+			}
+			$('#layerDemo .btn_click').on('click', function() {
+				var othis = $(this),
+					method = othis.data('method');
+				active[method] ? active[method].call(this, othis) : '';
+				
+				$.get('/clearCart',function(res){
+					console.log(res);
+				})
+			});
+		});
+	</script>
+
+</html>

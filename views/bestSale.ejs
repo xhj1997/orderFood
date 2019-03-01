@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/layui.css">
+    <link type="text/css" rel="stylesheet" href="/css/center.css">
+
+    <script src="/jquery.min.js"></script>
+    <script src="/layui.js"></script>
+
+    <style>
+        .head {
+            height: 95px;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        div {
+            box-sizing: border-box;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrapper {
+            height: 1300px;
+            background-color: #222;
+            border-bottom: 2px solid rgb(247, 190, 6);
+        }
+
+        .bd ul li .back {
+            width: 100%;
+        }
+
+        .bd ul li .back img {
+            width: 100%;
+        }
+
+        .foot {
+            position: relative;
+            height: 260px;
+        }
+
+        .wrapper .bd .content {
+            padding: 20px 50px;
+            overflow: hidden;
+        }
+
+        .wrapper .bd .content h2 {
+            margin: 50px 0;
+            color: rgb(247, 190, 6);
+            font-size: 28px;
+        }
+
+        .wrapper .bd .content h2 span {
+            color: #fff;
+            font-size: 22px;
+        }
+
+        .wrapper .bd .content .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .wrapper .bd .content .row .row_column {
+            width: 50%;
+        }
+        .row .row_column .item {
+            display: inline-block;
+            width: 40%;
+            vertical-align: top;
+            padding: 30px 0 40px;
+        }
+        .row .row_column .item h3 {
+            font-size: 24px;
+            color: rgb(221, 185, 64);
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgb(221, 185, 64);
+        }
+        .row .row_column .item h3 span {
+            font-size: 16px;
+        }
+        .row .row_column .item p {
+            margin: 25px 0 40px;
+            color: #fff;
+        }
+        .row .row_column .item.item2 {
+            width: 52%;
+            height: 100%;
+        }
+        .row .row_column .price {
+            color: rgb(247, 190, 6);
+        }
+
+        .row .row_column .price span {
+            font-size: 22px;
+        }
+
+        .row .row_column .price span .large {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="head">
+            <iframe src="/head" frameborder="0"></iframe>
+        </div>
+        <div class="wrapper">
+            <div class="header-third" id="header-third">
+                <div class="nav">
+                    <span>首页</span>
+                    <span class="active">热卖推荐</span>
+                    <span>点餐分类</span>
+                </div>
+                <div class="bd">
+                    <ul>
+                        <li>fff</li>
+                        <li class="active">
+                            <div class="back">
+                                <img src="http://16901321.s61i.faiusr.com/2/AD0IycmHCBACGAAgnM-T2AUolKGiwAQwgA848gI.jpg">
+                            </div>
+                            <div class="content">
+                                <h2>热卖推荐 <span>Recommendation for hot selling</span> </h2>
+                                <div class="row">
+                                </div>
+                            </div>
+                        </li>
+                        <li>44</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <iframe src="/footer" frameborder="0"></iframe>
+        </div>
+    </div>
+
+</body>
+<script>
+    $.get("/bestSale/get", function (data) {
+        console.log(data);
+        var html = "";
+        for (var i = 0; i < data.length; i++) {
+            html += '<div class="row_column">'+
+                        '<div class="item">' +
+                            '<img src="'+data[i].Fimage+'" alt="">' +
+                        '</div>' +
+                        '<div class="item item2">' +
+                            '<h3>·'+ data[i].Fname +'&nbsp; <span> &nbsp; '+data[i].Fenglish+'</span></h3>' +
+                            '<p>'+ data[i].Fdescription +'</p>' +
+                            '<div class="price">' +
+                                '<span>￥ <span class="large">'+ data[i].Fprice +'</span>.00</span>' +
+                                '<button class="layui-btn layui-btn-warm fr">加入购物车</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div > ';
+        }
+        $(".row").html(html);
+    })
+
+    function doTab() {
+        var allspan = document.querySelectorAll(".nav span");
+        var alli = document.querySelectorAll(".bd li");
+        for (var i = 0; i < allspan.length; i++) {
+            allspan[i].index = i;
+            allspan[i].onclick = doClick;
+        }
+        function doClick() {
+            //首先让其他的span移除高亮
+            for (var j = 0; j < allspan.length; j++) {
+                allspan[j].className = "";
+            }
+            //让当前的span高亮
+            this.className = "active";
+            //让bd下面对应的内容块显示//获取所点击的span的下标信息
+            //        var index=this.getAttribute("index");
+            var index = this.index;
+            //让bd下面其余的内容块隐藏
+            for (var j = 0; j < alli.length; j++) {
+                alli[j].className = "";
+            }
+            //让当前下标的内容块显示
+            alli[index].className = "active";
+        }
+    }
+    doTab();
+</script>
+
+</html>

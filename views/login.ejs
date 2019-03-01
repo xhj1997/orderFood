@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>登录</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="../public/bootstrapValidator.min.css" />
+		
+		<style>
+			.container{
+				max-width: 500px;
+			}
+			.nav>li{
+				   width: 50%;
+           text-align: center;
+			}
+			.btn{
+				    margin-left: 50%;
+            transform: translateX(-50%);
+			}
+		</style>
+</head>
+<body>
+ 
+<div class="container">
+    
+       <div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+    	会员登录
+    </a>
+    </li>
+    <li role="presentation">
+	<a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+    	后台登录
+    </a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+   
+        <form>
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="请输入密码">
+            </div>
+           
+            <button type="button" id="denglu" class="btn btn-success">登录</button>
+        </form>
+
+        <div class="alert alert-danger" role="alert" id="cuowukuang" style="display: none;">
+        	
+        </div>
+   
+</div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+    	
+        <form>
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" class="form-control" name="username" id="husername" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <label for="password">手机号</label>
+                <input type="text" class="form-control" name="phone" id="hphone" placeholder="请输入密码">
+            </div>
+           
+            <button type="button" id="hdenglu" class="btn btn-success">登录</button>
+        </form>
+
+        <div class="alert alert-danger" role="alert" id="cuowukuang" style="display: none;">
+        	
+        
+    </div>
+    </div>
+  </div>
+
+</div>
+   
+    
+    
+    
+
+ 
+
+
+<script src="/jquery-1.11.3.js"></script>      
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/bootstrapValidator.min.js"></script>
+
+<script type="text/javascript">
+	//表单验证
+	$(function () {
+        $('form').bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                username: {
+                    message: '用户名验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '用户名不能为空'
+                        },
+                        stringLength: {
+                            min: 4,
+                            max: 10,
+                            message: '用户名长度必须在4到10位之间'
+                        },
+                        regexp: {
+                            regexp:/^[a-zA-Z][a-zA-Z0-9]{3,9}$/,
+                            message: '用户名是字母、数字的组合,并且以字母开头'
+                        }
+                    }
+                },
+                password:{
+                	validators: {
+                        notEmpty: {
+                            message: '密码不能为空'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 12,
+                            message: '密码长度必须在6到12位之间'
+                        },
+                        regexp: {
+                            regexp:/^[\w]{6,12}$/ ,
+                            message: '密码为6-12位的非空白字符'
+                        }
+                    }
+                }  
+            }
+        });
+    });
+
+	
+	
+	
+    $("input").focus(function(){
+        $("#cuowukuang").fadeOut();
+    });
+   $("#denglu").click(function(){
+   			var obj={}
+   			obj.username=$("#username").val()
+   			obj.password= $("#password").val()
+       //注册按钮的事件，用ajax提交表单
+       $.post("/dologin",obj,function(data){
+           if(data == "1"){
+               //登陆成功
+               alert("登录成功！将自动跳转到首页");
+               window.location = "/";
+           }else if(data == "-1"){
+               $("#cuowukuang").fadeIn();
+               $("#cuowukuang").html("用户名不存在");
+           }else if(data== "-2"){
+               $("#cuowukuang").fadeIn();
+               $("#cuowukuang").html("密码错误！");
+           }
+       });
+   });
+   
+   //后台登录
+   $("#hdenglu").click(function(){
+   		var obj={}
+   		obj.husername=$("#husername").val()
+   		obj.hphone=$("#hphone").val()
+   		$.post("/dohlogin",obj,function(data){
+   			if(data=="1"){
+   				alert("登录成功！")
+   				window.location="/manage";
+   				return;
+   			}
+   			else if(data=="-1"){
+   				$("#cuowukuang").fadeIn();
+          $("#cuowukuang").html("用户名不存在");
+   			}
+   			else if(data=="-2"){
+   				 $("#cuowukuang").fadeIn();
+           $("#cuowukuang").html("手机号错误！");
+   			}
+   		})
+   })
+   
+</script>
+
+</body>
+</html>

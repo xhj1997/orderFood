@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>在线订餐系统</title>
+	<link rel="stylesheet" href="/css/layui.css">
+    <link type="text/css" rel="stylesheet" href="/css/center.css">
+    <script src="/jquery.min.js"></script>
+    <script src="/layui.js"></script>
+	<link rel="stylesheet" href="/css/hanj.css">
+	
+</head>
+
+<body>
+	<div class="body_body">
+		<div class="hy_head">
+			<%include head.ejs%>
+		</div>
+		<div class="hy_side" style="float: right;">
+				<%include side.ejs%>
+		</div>
+
+		<div class="hy_center" id="hy_center">
+			<div class="header-third" id="header-third">
+				<div class="wrapper">
+					<div class="nav">
+						<span class="active">首页</span>
+						<span>热卖推荐</span>
+						<span>点餐分类</span>
+					</div>
+					<div class="bd">
+						<ul>
+							<li class="active">
+								<div class="adver">
+									<div class="tuzi">
+										<img src="/images/pizza/AD0IycmHCBAEGAAg0eTS2AUo4cqH4AQwxAI4NQ.png">
+										<p class="first">人气风味披萨品牌</p>
+										<p>意式风味 齿颊留香</p>
+										<p>MEET THE NEEDS OF YOUR TASTE BUDS</p>
+										<p>POPULAR PIZZA BRAND</p>
+									</div>
+									<div class="bigpizza">
+										<img src="/images/pizza/AD0IycmHCBAEGAAg2_PS2AUoiv3QjAUwhQQ4gQM.png">
+									</div>
+
+								</div>
+								<div class="sort">
+									<div class="classication">
+										<div class="ordersort">
+											<p>点餐分类</p>
+											<p>CLASSICATION</p>
+										</div>
+									</div>
+									<div class="taocan">
+										<div>
+											<img src="/images/pizza/AD0IycmHCBAEGAAgrPPS2AUo4Ln66QQwYDg1.png" width="50px" height="35px">
+											<p>全家套餐</p>
+											<p>FAMILY</p>
+										</div>
+										<div>
+											<img src="/images/pizza/AD0IycmHCBAEGAAgqPTS2AUo_Lr82AYwNDg1.png" width="40px" height="35px">
+											<p>两人世界餐</p>
+											<p>LOVERS</p>
+										</div>
+										<div>
+											<img src="/images/pizza/AD0IycmHCBAEGAAgqfTS2AUo5MyKPDApODU.png" width="40px" height="35px">
+											<p>美食独享</p>
+											<p>SINGLE</p>
+										</div>
+									</div>
+									<div class="centersort">
+										<div class="centerleft">
+											<img src="/images/pizza/AD0IycmHCBAEGAAg6a7T2AUols2IuwQwjwE4ZA.png" width="60px" height="50px">
+											<p>全家套装专区</p>
+											<p>全累计售出<span>10000</span>份</p>
+											<div>
+												<p class="ares">FAMILY SPECIAL ARES</p>
+											</div>
+										</div>
+										<div class="centerright">
+											<div class="topl">
+												<div class="topp">
+													<p>店长推荐</p>
+													<p>皮脆薄料丰富更好味</p>
+												</div>
+											</div>
+											<div class="bottoml">
+												<div class="bottomp">
+													<p>经典口味</p>
+													<p>经典传统意大利口味</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="centerthird">
+									<div class="bgthird">
+										<div class="thirdtop">
+											<script>
+												$.get("/productManage/save", function (res) {
+													console.log(res);
+													var html = "";
+													for (var i = 0; i < 1; i++) {
+														html += "<img src=" + res[i].Fimage + " width='250px' height='180px'>" +
+															"<div class='thirdtopright'>" +
+															"<p>" + res[i].Fname + "&nbsp;&nbsp;&nbsp;<span>ORLEAN PIZZA</span></p>" +
+															"<p>新奥尔良烤鸡肉披萨是一道以高筋面粉、鸡蛋液、牛奶为主要食材制作的美食</p>" +
+															"<p>" + "<a>" + res[i].Fprice + "</a>" + "</p>" +
+															"<img src='/images/pizza/AD0IycmHCBAEGAAggrfT2AUo75GKxAQwQDhA.png' width='40' height='40''>" +
+															"</div>"
+													}
+													$(".thirdtop").html(html);
+												})
+											</script>
+										</div>
+										<div class="thirdbottom">
+
+											<script>
+												$.get("/productManage/save", function (res) {
+													console.log(res);
+													var html = "";
+													for (var i = 7; i < 10; i++) {
+														html += "<div>" +
+															"<img src=" + res[i].Fimage + " width='150px' height='100px'>" +
+															"<p>" + res[i].Fname + "</p>" +
+															"<p>CLASSIC VEAETARIAN PIZZA</p>" +
+															"</div>"
+													}
+													$(".thirdbottom").html(html);
+												})
+											</script>
+										</div>
+									</div>
+								</div>
+								<div class="centerfour">
+									<div class="cfourc">
+										<div style=" background:url('/images/pizza/AD0IycmHCBAEGAAglL3T2AUo6tzuiwcw0AQ4mQI.png') no-repeat;  background-position: 0%;background-size: 100% 100%;"
+										 class="js1">
+											<div class="jieshao1">
+												<script>
+													$.get("/productManage/save", function (res) {
+														console.log(res);
+														var html = "";
+														for (var i = 10; i <= 10; i++) {
+															html +=
+																"<p>" + res[i].Fname + "</p>" +
+																"<p>Hawaii Pizza</p>" +
+																"<p>￥" + res[i].Fprice + "</p>" +
+																"<a>购买</a>"
+														}
+														$(".jieshao1").html(html);
+													})
+												</script>
+											</div>
+										</div>
+										<div style="background:url('/images/pizza/AD0IycmHCBAEGAAglb3T2AUo4tCX5wcw0AQ4mQI.png') no-repeat;  background-position: 0%;background-size: 100% 100%;">
+											<div class="jieshao2">
+												<script>
+													$.get("/productManage/save", function (res) {
+														console.log(res);
+														var html = "";
+														for (var i = 11; i <= 11; i++) {
+															html +=
+																"<p>" + res[i].Fname + "</p>" +
+																"<p>Hawaii Pizza</p>" +
+																"<p>￥" + res[i].Fprice + "</p>" +
+																"<a>购买</a>"
+														}
+														$(".jieshao2").html(html);
+													})
+												</script>
+											</div>
+										</div>
+										<div style="background:url('/images/pizza/AD0IycmHCBAEGAAglb3T2AUo8Zbl4AIw0AQ4mQI.png') no-repeat;  background-position: 0%;background-size: 100% 100%;">
+											<div class="jieshao3">
+												<script>
+													$.get("/productManage/save", function (res) {
+														console.log(res);
+														var html = "";
+														for (var i = 12; i <= 12; i++) {
+															html +=
+																"<p>" + res[i].Fname + "</p>" +
+																"<p>Hawaii Pizza</p>" +
+																"<p>￥" + res[i].Fprice + "</p>" +
+																"<a>购买</a>"
+														}
+														$(".jieshao3").html(html);
+													})
+												</script>
+											</div>
+										</div>
+										<div style="background:url('/images/pizza/AD0IycmHCBAEGAAglb3T2AUo8Zbl4AIw0AQ4mQI.png') no-repeat;  background-position: 0%;background-size: 100% 100%;">
+											<div class="jieshao4">
+												<script>
+													$.get("/productManage/save", function (res) {
+														console.log(res);
+														var html = "";
+														for (var i = 4; i <= 4; i++) {
+															html +=
+																"<p>" + res[i].Fname + "</p>" +
+																"<p>Hawaii Pizza</p>" +
+																"<p>￥" + res[i].Fprice + "</p>" +
+																"<a>购买</a>"
+														}
+														$(".jieshao4").html(html);
+													})
+												</script>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li id="recommendClick">
+								<div class="back">
+									<img src="http://16901321.s61i.faiusr.com/2/AD0IycmHCBACGAAgnM-T2AUolKGiwAQwgA848gI.jpg">
+								</div>
+								<div class="content">
+									<h2>热卖推荐 <span>Recommendation for hot selling</span> </h2>
+									<div class="row">
+									</div>
+								</div>
+							</li>
+		
+							<li >
+								<div class="back">
+									<img src="http://16901321.s61i.faiusr.com/2/AD0IycmHCBACGAAg7d3T2AUovNSLjgEwgA848gI.jpg">
+								</div>
+								<div class="content">
+									<div>
+										<h2>全家套餐 <span> FAMILY</span> </h2>
+										<div class="hj_catagory">
+											<div class="hj_all">
+												<script>
+													$.get("/productManage/save", function (res) {
+														console.log(res);
+														var html = "";
+														for (var i = 7; i < 10; i++) {
+															html += "<div>" +
+																"<img src=" + res[i].Fimage + " width='150px' height='100px'>" +
+																"<p>" + res[i].Fname + "</p>" +
+																"<p class=\"para\">CLASSIC VEAETARIAN PIZZA</p>" +
+																"<button class=\"layui-btn layui-btn-warm\">加入购物车</button>" +
+																"</div>"
+														}
+														$(".hj_all").html(html);
+													})
+												</script>
+											</div>
+										</div>
+									</div>
+
+									<div>
+										<h2>二人世界 <span> FAMILY</span> </h2>
+										<div class="hj_center">
+											<div class="cfourc">
+												<div style=" background:url('/images/pizza/AD0IycmHCBAEGAAglL3T2AUo6tzuiwcw0AQ4mQI.png') no-repeat;  background-position: 0%;background-size: 100% 100%;"
+												 class="js1">
+													<div class="jieshao1">
+														<script>
+															$.get("/productManage/save", function (res) {
+																console.log(res);
+																var html = "";
+																for (var i = 10; i <= 10; i++) {
+																	html +=
+																		"<p>" + res[i].Fname + "</p>" +
+																		"<p>Hawaii Pizza</p>" +
+																		"<p>￥" + res[i].Fprice + "</p>" +
+																		"<a>购买</a>"
+																}
+																$(".jieshao1").html(html);
+															})
+														</script>
+													</div>
+												</div>
+												<div style="background:url('/images/pizza/AD0IycmHCBAEGAAglb3T2AUo4tCX5wcw0AQ4mQI.png') no-repeat;  background-position: 0%;background-size: 100% 100%;">
+													<div class="jieshao2">
+														<script>
+															$.get("/productManage/save", function (res) {
+																console.log(res);
+																var html = "";
+																for (var i = 11; i <= 11; i++) {
+																	html +=
+																		"<p>" + res[i].Fname + "</p>" +
+																		"<p>Hawaii Pizza</p>" +
+																		"<p>￥" + res[i].Fprice + "</p>" +
+																		"<a>购买</a>"
+																}
+																$(".jieshao2").html(html);
+															})
+														</script>
+													</div>
+												</div>
+												<div style="background:url('/images/pizza/AD0IycmHCBAEGAAglb3T2AUo8Zbl4AIw0AQ4mQI.png') no-repeat;  background-position: 0%;background-size: 100% 100%;">
+													<div class="jieshao3">
+														<script>
+															$.get("/productManage/save", function (res) {
+																console.log(res);
+																var html = "";
+																for (var i = 12; i <= 12; i++) {
+																	html +=
+																		"<p>" + res[i].Fname + "</p>" +
+																		"<p>Hawaii Pizza</p>" +
+																		"<p>￥" + res[i].Fprice + "</p>" +
+																		"<a>购买</a>"
+																}
+																$(".jieshao3").html(html);
+															})
+														</script>
+													</div>
+												</div>
+												<div style="background:url('/images/pizza/AD0IycmHCBAEGAAglb3T2AUo8Zbl4AIw0AQ4mQI.png') no-repeat;  background-position: 0%;background-size: 100% 100%;">
+													<div class="jieshao4">
+														<script>
+															$.get("/productManage/save", function (res) {
+																console.log(res);
+																var html = "";
+																for (var i = 4; i <= 4; i++) {
+																	html +=
+																		"<p>" + res[i].Fname + "</p>" +
+																		"<p>Hawaii Pizza</p>" +
+																		"<p>￥" + res[i].Fprice + "</p>" +
+																		"<a>购买</a>"
+																}
+																$(".jieshao4").html(html);
+															})
+														</script>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+		
+			</div>
+			<div class="hy_footer">
+				<iframe src="/footer" frameborder="0"></iframe>
+			</div>
+
+	</div>
+	<div class="hy_footer">
+		<%include footer.ejs%>
+	</div>
+		</div>
+</body>
+<script>
+	var allspan = document.querySelectorAll(".nav span");
+	var alli = document.querySelectorAll(".bd li");
+	for (var i = 0; i < allspan.length; i++) {
+		allspan[i].index = i;
+		allspan[i].onclick = doClick;
+	}
+
+	function doClick() {
+		//首先让其他的span移除高亮
+		for (var j = 0; j < allspan.length; j++) {
+			allspan[j].className = "";
+		}
+		//让当前的span高亮
+		this.className = "active";
+
+		//让bd下面对应的内容块显示
+		//获取所点击的span的下标信息
+		//        var index=this.getAttribute("index");
+		var index = this.index;
+		//让bd下面其余的内容块隐藏
+		for (var j = 0; j < alli.length; j++) {
+			alli[j].className = "";
+		}
+		//让当前下标的内容块显示
+		alli[index].className = "active";
+		if (index == 1) {
+			$("#hy_center").removeClass("hy_center hy_catagory").addClass("hy_boxCen");
+			$(".wrapper").height(1300);
+		}
+		else if (index == 2) {
+			$("#hy_center").removeClass("hy_center hy_boxCen").addClass("hy_catagory");
+			$(".wrapper").height(1550);
+		}
+		else {
+			$("#hy_center").removeClass("hy_boxCen hy_catagory").addClass("hy_center");
+			$(".wrapper").height(1300);
+		}
+	}
+//获取热卖推荐的数据
+	$.get("/bestSale/get", function (data) {
+		console.log(data);
+		var html = "";
+		for (var i = 0; i < data.length; i++) {
+			html += '<div class="row_column">' +
+				'<div class="item">' +
+				'<img src="' + data[i].Fimage + '" alt="">' +
+				'</div>' +
+				'<div class="item item2">' +
+				'<h3>·' + data[i].Fname + '&nbsp; <span> &nbsp; ' + data[i].Fenglish + '</span></h3>' +
+				'<p>' + data[i].Fdescription + '</p>' +
+				'<div class="price">' +
+				'<span>￥ <span class="large">' + data[i].Fprice + '</span>.00</span>' +
+				"<button class='layui-btn layui-btn-warm fr addCart' data-id='"+data[i]._id+"'>加入购物车</button>" +
+				'</div>' +
+				'</div>' +
+				'</div > ';
+		}
+		
+		$(".row").html(html);
+		
+		$(".addCart").click(function(e){
+			var id = e.target.dataset.id;
+			console.log(id);
+			$.get("/showData",{id:id},function(res){
+				console.log(res);
+				location.href="/cart";
+			})
+		})
+	})
+
+</script>
+
+</html>

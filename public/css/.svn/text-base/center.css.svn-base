@@ -1,0 +1,455 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.header-third{
+    position: relative;
+    background-color: #333;
+}
+.nav{
+    display: flex;
+    box-sizing: border-box;
+    height: 70px;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+.nav span {
+    display: inline-block;
+    cursor: pointer;
+      flex:1;
+    font-size: 20px;
+    line-height: 70px;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+}
+        
+.nav span.active {
+	color:red;
+    background-color: rgb(243, 211, 152);
+}
+.bd li{
+	height: 800px;
+	display: none;
+}
+     
+.bd li.active {
+    display: block;
+}
+.adver{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url("../images/pizza/AD0IycmHCBACGAAgr_PS2AUoqujdlAQwgA842AQ.jpg") no-repeat;
+    background-position: 0%;
+    background-size: 100% 100%;
+}
+.backadver img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.bigpizza{
+    position: absolute;
+    width: 400px;
+    right: 200px;
+    top: 100px;
+}
+.bigpizza img{
+    width: 400px;
+    height: 300px;
+}
+.tuzi{
+    position: absolute;
+    top: 150px;
+    left: 300px;
+}
+.tuzi img{
+    width: 300px;
+    height: 45px;;
+}
+.tuzi .first{
+    color: rgb(243, 211, 152);
+    font-size: 30px;
+    font-weight: 500;
+}
+.tuzi p{
+    color:rgb(243, 211, 152);
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.sort{
+    background-color: black;
+    position: relative;
+    height: 670px;
+    width: 100%;
+}
+.classication{
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    top: 50px;
+    left: 100px;
+    background: url("../images/pizza/AD0IycmHCBAEGAAgku7S2AUo94PjrwQwgwM44AE.png") no-repeat;
+    background-position: 0%;
+    background-size: 100% 100%;
+}
+.ordersort{
+    margin-left: 150px;
+    margin-top: 50px;
+    text-align: center;
+}
+.ordersort p{
+    color:rgb(243, 211, 152);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.taocan{
+    background-color: #333;
+    position: absolute;
+    width: 620px;
+    height: 200px;
+    top: 50px;
+    right: 100px;
+}
+.taocan div{
+    float: left;
+    margin-left: 100px;
+    margin-top: 50px;
+    text-align: center;
+}
+.taocan div p{
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.centersort{
+    position: relative;
+    top: 280px;
+    height: 330px;
+}
+.centerleft{
+    position: absolute;
+    width: 660px;
+    height: 330px;
+    left: 100px;
+    background: url("../images/pizza/AD0IycmHCBAEGAAg1e7S2AUombXc0gMw_AU4tAM.png") no-repeat;
+    background-position: 0%;
+    background-size: 100% 100%;
+}
+.centerleft p{
+    margin-left: 50px;
+    color: rgb(243, 211, 152);
+    margin-top: 10px;
+    font-size: 18px;
+}
+.centerleft img{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.centerleft div{
+    background: url("../images/pizza/AD0IycmHCBAEGAAg6a7T2AUoxNaj7wMw7gE4LQ.png") no-repeat;
+    background-position: 0%;
+    background-size: 28% 250%;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.centerleft div .ares{
+    color: #333;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+.centerright{
+    position: absolute;
+    width: 460px;
+    height: 330px;
+    right: 100px;
+}
+.centerright .topl{
+    background: url("../images/pizza/AD0IycmHCBAEGAAgtu-S2AUo2cCIqAcwqgM40gE.png") no-repeat;
+    background-position: 0%;
+    background-size: 100% 100%;
+    height: 150px;
+    width: 100%;
+}
+.centerright .topl .topp{
+    width: 150px;
+    text-align: center;
+    margin-left: 15px;
+    position: relative;
+    top: 30%;
+}
+.topp p:first-child{
+    color: rgb(243, 211, 152);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.topp p:last-child{
+    color: #ffffff;
+    font-size: 12px;
+}
+.centerright .bottoml{
+    background: url("../images/pizza/AD0IycmHCBAEGAAgt_-S2AUoxsCLwwEwqgM40gE.png") no-repeat;
+    background-position: 0%;
+    background-size: 100% 100%;
+    height: 150px;
+    margin-top: 30px;
+}
+.centerright .bottoml .bottomp{
+    width: 150px;
+    text-align: center;
+    margin-left: 200px;
+    position: relative;
+    top: 30%;
+}
+.bottomp p:first-child{
+    color: rgb(243, 211, 152);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.bottomp p:last-child{
+    color: #ffffff;
+    font-size: 12px;
+}
+.centerthird{
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background-color: black;
+}
+.centerthird .bgthird{
+    background: url("../images/pizza/AD0IycmHCBACGAAgt7TT2AUoqJrdkwcwsAk4nwc.jpg") no-repeat;
+    background-position: 0%;
+    background-size: 92% 100%;
+    margin-left: 100px;
+    height: 700px;
+    position: relative;
+    top: 50px;
+}
+.centerthird .bgthird img:first-child{
+    margin-left: 200px;
+    margin-top: 90px;
+}
+.centerthird .bgthird .thirdtopright{
+    width: 250px;
+    position: relative;
+    float: right;
+    right: 300px;
+    top: 120px;
+}
+.thirdtopright p:first-child{
+    color: rgb(243, 211, 152);
+    font-size: 20px;
+}
+.thirdtopright p:first-child span{
+    color: rgb(243, 211, 152);
+    font-size: 14px;
+}
+.thirdtopright p:nth-child(2){
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.thirdtopright p:nth-child(3){
+    margin-top: 10px;
+}
+.centerthird .bgthird img:last-child{
+    position: absolute;
+    right: 0;
+}
+.thirdtopright p:nth-child(3) a{
+ 	color: rgb(243, 211, 152);
+    font-size: 20px;
+	text-decoration: none;
+}
+.thirdbottom{
+    position: relative;
+    height: 200px;
+    border-top: 1px solid rgb(243, 211, 152);
+    top: 60px;
+    width: 1150px;
+}
+.thirdbottom div{
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+}
+.thirdbottom div img{
+    position: relative;
+    left: -100px;
+}
+.thirdbottom div p:nth-child(2){
+    color: rgb(243, 211, 152);
+    font-size: 20px;
+    margin-top: 10px;
+}
+.thirdbottom div p:last-child{
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.centerfour{
+    position: relative;
+    height: 650px;
+    width: 100%;
+    border-bottom: 1px solid #ffc001;
+    background-color: #333;
+}
+.centerfour .cfourc{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+.centerfour .cfourc div{
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    width: 550px;
+    height: 250px;
+}
+.cfourc div .jieshao1{
+    position: relative;
+    margin-left: 380px;
+    text-align: center;
+    width: 150px;
+}
+.cfourc div .jieshao2{
+    position: relative;
+    margin-left: 380px;
+    text-align: center;
+    width: 150px;
+}
+.cfourc div .jieshao3{
+    position: relative;
+    margin-left: 20px;
+    text-align: center;
+    width: 160px;
+}
+.cfourc div .jieshao4{
+    position: relative;
+    margin-left: 20px;
+    text-align: center;
+    width: 160px;
+}
+.cfourc div p:first-child{
+    color: rgb(243, 211, 152);
+    font-size: 20px;
+    margin-top: 60px;
+}
+.cfourc div p:nth-child(2){
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.cfourc div p:nth-child(3){
+    color:  rgb(243, 211, 152);
+    font-size: 20px;
+    margin-top: 10px;
+}
+.cfourc div a{
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    width: 80px;
+    margin-top: 10px;
+    background-color: #ffc001;
+    color: white;
+    font-size: 16px;
+}
+.remaituijian{
+	position: relative;
+	width: 100%;
+	height: 400px;
+}
+.inBannerListZoneBg{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url("../images/pizza/AD0IycmHCBACGAAgnM-T2AUolKGiwAQwgA848gI.jpg") no-repeat;
+    background-position: 0%;
+    background-size: 100% 100%;
+}
+.elemZoneBg{
+	position: relative;
+	height: 2220px;
+	background-color: #333;
+}
+.elemZoneBg .editor{
+	position: absolute;
+	left: 100px;
+	font-size: 25px;
+	top: 100px;
+}
+.elemZoneBg .editor p{
+	color: rgb(243, 211, 152);
+}
+.elemZoneBg .editor p span{
+	color: white;
+	font-size: 16px;
+}
+.elemZoneBg .forMargin{
+	position: relative;
+	top: 200px;
+	left: 100px;
+	width: 1150px;
+	height: 1000px;
+}
+.forMargin .jspizza{
+	float: left;
+	width: 550px;
+	height: 300px;
+	margin-right: 20px;
+}
+.forMargin .jspizza img{
+	margin-top: 15%;
+}
+.forMargin .jspizza div{
+	width: 250px;
+	float: right;
+	height: 300px;
+	text-align: center;
+	padding-top: 60px;
+}
+.forMargin .jspizza div p:first-child{
+	color: rgb(243, 211, 152);
+	font-size: 20px;
+	
+}
+.forMargin .jspizza div p:first-child span{
+	color: rgb(243, 211, 152);
+	font-size: 14px;
+}
+.forMargin .jspizza div p:nth-child(2){
+	border: 1px dashed rgb(243, 211, 152);
+	margin-top: 10px;
+}
+.forMargin .jspizza div p:nth-child(3){
+	color:white ;
+	font-size: 14px;
+	margin-top: 10px;
+}
+.forMargin .jspizza div p:nth-child(4){
+	color:rgb(243, 211, 152);
+	font-size: 25px;
+	margin-top: 10px;
+}
+.forMargin .jspizza div .goumai{
+	background-color:rgb(243, 211, 152);
+	color:white ;
+	font-size: 18px;
+	width: 100px;
+	height: 40px;
+	display: inline-block;
+	line-height: 40px;
+	margin-top: 10px;
+}

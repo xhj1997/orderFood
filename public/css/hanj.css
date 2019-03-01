@@ -1,0 +1,248 @@
+.hy_head {
+    height: 100px;
+}
+
+.hy_head iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.hy_center {
+    height: 2693px;
+}
+
+.hy_boxCen {
+    height: 1325px;
+}
+
+.hy_catagory {
+    height: 1550px;
+}
+
+.hy_footer {
+    height: 260px;
+}
+
+.hy_footer iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.head {
+    height: 95px;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    height: 1300px;
+    background-color: #222;
+    border-bottom: 2px solid rgb(247, 190, 6);
+}
+
+.bd ul li .back {
+    width: 100%;
+}
+
+.bd ul li .back img {
+    width: 100%;
+}
+
+.foot {
+    position: relative;
+    height: 260px;
+}
+
+.wrapper .bd .content {
+    padding: 20px 50px;
+    overflow: hidden;
+}
+
+.wrapper .bd .content>div {
+    box-sizing: border-box;
+}
+
+.wrapper .bd .content h2 {
+    margin: 50px 0;
+    color: rgb(247, 190, 6);
+    font-size: 28px;
+}
+
+.wrapper .bd .content h2 span {
+    color: #fff;
+    font-size: 22px;
+}
+
+.wrapper .bd .content .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapper .bd .content .row .row_column {
+    width: 50%;
+}
+
+.row .row_column .item {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    padding: 30px 0 40px;
+}
+
+.row .row_column .item h3 {
+    font-size: 24px;
+    color: rgb(221, 185, 64);
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgb(221, 185, 64);
+}
+
+.row .row_column .item h3 span {
+    font-size: 16px;
+}
+
+.row .row_column .item p {
+    margin: 25px 0 40px;
+    color: #fff;
+}
+
+.row .row_column .item.item2 {
+    width: 52%;
+    height: 100%;
+}
+
+.row .row_column .price {
+    color: rgb(247, 190, 6);
+}
+
+.row .row_column .price span {
+    font-size: 22px;
+}
+
+.row .row_column .price span .large {
+    font-size: 40px;
+}
+
+.hj_catagory {}
+
+.hj_catagory .hj_all {
+    display: flex;
+    height: 250px;
+}
+
+.hj_catagory .hj_all>div {
+    flex: 1;
+    width: 33%;
+    text-align: center;
+}
+
+.hj_catagory .hj_all>div>img {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
+.hj_catagory .hj_all>div p {
+    color: rgb(243, 211, 152);
+    font-size: 20px;
+    padding: 15px 0;
+}
+
+.hj_catagory .hj_all>div .para {
+    font-size: 14px;
+    color: #fff;
+    padding: 5px 0 15px;
+}
+
+.hj_center {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 650px;
+    width: 100%;
+    border-bottom: 1px solid #ffc001;
+}
+.hj_center>div{
+    flex: 1;
+}
+.hj_center .cfourc {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+.hj_center .cfourc div {
+    float: left;
+    margin-bottom: 30px;
+    width: 550px;
+    height: 250px;
+}
+
+.cfourc div .jieshao1 {
+    position: relative;
+    margin-left: 380px;
+    text-align: center;
+    width: 150px;
+}
+
+.cfourc div .jieshao2 {
+    position: relative;
+    margin-left: 380px;
+    text-align: center;
+    width: 150px;
+}
+
+.cfourc div .jieshao3 {
+    position: relative;
+    margin-left: 20px;
+    text-align: center;
+    width: 160px;
+}
+
+.cfourc div .jieshao4 {
+    position: relative;
+    margin-left: 20px;
+    text-align: center;
+    width: 160px;
+}
+
+.cfourc div p:first-child {
+    color: rgb(243, 211, 152);
+    font-size: 20px;
+    margin-top: 60px;
+}
+
+.cfourc div p:nth-child(2) {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.cfourc div p:nth-child(3) {
+    color: rgb(243, 211, 152);
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+.hy_side {
+    width: 52px;
+    height: 100%;
+    z-index: 999;
+    margin-top: -100px;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "student_management_v2",
+  "version": "2.0.0",
+  "description": "这是一个Mongoose结合Express有界面的客户管理系统",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Team5+Team4",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "formidable": "^1.1.1",
+    "layui-src": "^2.4.5",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.9.2"
+  }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/layui.css">
+    <script src="/jquery-1.9.1.js"></script>
+    <script src="/layui.js"></script>
+</head>
+
+<body>
+    <h1>555555</h1>
+</body>
+<script>
+    $.get("/catagory/get", function (data) {
+        console.log(12345);
+        console.log(data);
+    })
+
+</script>
+
+</html>

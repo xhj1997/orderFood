@@ -1,0 +1,6 @@
+{'Fid':6,'Fname':'热狗披萨','Fenglish':'HOT DOG PIZZA','Fdescription':'精选丰富食材，加入独特配方特制','Fprice':68.00,'Fnumber':100,'Fcategory':'主食','Fimage':'/images/recommend/hotdog.png'}
+{'Fid':7,'Fname':'乳酪精选比萨','Fenglish':'CHEESE PIZZA','Fdescription':'精选丰富食材，加入独特配方特制','Fprice':68.00,'Fnumber':100,'Fcategory':'主食','Fimage':'/images/recommend/cheese.png'}
+{'Fid':8,'Fname':'双拼披萨','Fenglish':'DOUBLE SPEL PIZZA','Fdescription':'精选丰富食材，加入独特配方特制','Fprice':68.00,'Fnumber':100,'Fcategory':'主食','Fimage':'/images/recommend/shuangpin.png'}
+{'Fid':9,'Fname':'双鲜披萨','Fenglish':'SEAFOOD PIZZA','Fdescription':'精选丰富食材，加入独特配方特制','Fprice':98.00,'Fnumber':100,'Fcategory':'主食','Fimage':'/images/recommend/shuangxian.png'}
+{'Fid':12,'Fname':'烟肉披萨','Fenglish':'SMOKED MEAT PIZZA','Fdescription':'精选丰富食材，加入独特配方特制','Fprice':65.00,'Fnumber':100,'Fcategory':'主食','Fimage':'/images/recommend/yanrou.png'}
+{'Fid':13,'Fname':'羊小排披萨','Fenglish':'LUMP CHOP PIZZA','Fdescription':'精选丰富食材，加入独特配方特制','Fprice':63.00,'Fnumber':100,'Fcategory':'主食','Fimage':'/images/recommend/sheep.png'}

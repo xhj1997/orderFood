@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ffffff;
+}
+.header-first{
+    position: fixed;
+    height: 30px;
+    background-color: #333;
+    width: 100%;
+    z-index: 5;
+}
+.header-left{
+    position: relative;
+    float: left;
+    left: 100px;
+    line-height: 30px;
+}
+.header-left a{
+    font-size: 14px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #ccc;
+}
+.header-right{
+    position: relative;
+    float: right;
+    right: 100px;
+    line-height: 30px;
+}
+.header-right a{
+    font-size: 14px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #ccc;
+}
+.header-right a i{
+    font-size: 15px;
+}
+.header-second{
+    position: relative;
+    top: 30px;
+    height: 95px;
+    background-color: #202020;
+}
+.left{
+    float: left;
+    position: absolute;
+    height: 70px;
+    left: 100px;
+    width: 300px;
+    line-height: 50px;
+}
+.left img{
+    position: absolute;
+    float: left;
+    width: 50px;
+    height: 50px;
+    top: 10px;
+    margin-right: 15px;
+}
+.left div{
+    margin-left: 70px;
+}
+.left div p:first-child{
+    float: left;
+    margin-right: 10px;
+    color: rgb(255, 192, 1);
+    font-weight: 700;
+    font-size: 18px;
+}
+.left div p:last-child{
+    float: left;
+    margin-right: 10px;
+    color: rgb(89, 89, 89);
+    font-weight: 700;
+    font-size: 18px;
+}
+.left span{
+    position: absolute;
+    color:rgb(243, 211, 152);
+    font-size: 12px;
+    left: 70px;
+    top: 20px;
+    margin-top: 10px;
+}
+.right{
+    height: 70px;
+    position: absolute;
+    right: 70px;
+}
+.right img{
+    float: right;
+    width: 80px;
+    height: 80px;
+}
+.right div{
+    float: left;
+    line-height: 10px;
+    margin-top: 20px;
+    margin-right: 15px;
+}
+.right div p:first-child{
+    color:rgb(255, 192, 1);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.right div p:last-child{
+    color:rgb(243, 211, 152);
+    font-size: 14px;
+}
+.header-third{
+    position: relative;
+    top: 25px;
+    height: 30px;
+    background-color: #333;
+}

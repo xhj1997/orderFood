@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.footer{
+    position: relative;
+    height: 260px;
+    bottom: 0;
+    background-color: #333;
+}
+.footer .ft{
+    position: relative;
+    top: 30px;
+    width: 150px;
+    text-align: center;
+    margin: 0px auto;
+}
+.footer .ft p:nth-child(2){
+    color: #ffc001;
+    font-weight: 600;
+}
+.footer .ft p:nth-child(2) span{
+    color: #666666;
+    font-weight: 600;
+}
+.footer .ft p:last-child{
+    color: rgb(243, 211, 152);
+    font-size: 10px;
+    margin-top: 10px;
+}
+.footer .fc{
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    margin: 50px auto;
+}
+.footer .fc div{
+    float: left; 
+    margin-left: 30px;
+}
+.footer .fc div p{
+    font-size: 10px;
+    color: #666666;
+}

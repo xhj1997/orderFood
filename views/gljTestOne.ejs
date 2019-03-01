@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<script src="/jquery.min.js"></script>
+</head>
+<body>
+	
+	<button id='btn'>点我</button>
+	<a><div id="content">
+		
+	</div></a>
+</body>
+<script>
+	$("#btn").click(function(){
+		$.get("/productManage/save",function(res){
+			console.log(res);
+			var html = "";
+			for(var i=0;i<res.length;i++){
+				html += "<div style='width: 100px;height: 50px;border: 1px solid red;' data-id='"+res[i]._id+"'>"+res[i]._id+"</div>"	
+			}
+			$("#content").html(html)
+		})
+	})
+	
+	$("#content").click(function(e){
+		console.log(e.target.dataset.id)
+		var id = e.target.dataset.id;
+		
+		$.get("/showData",{id:id},function(res){
+			console.log(res);
+			location.href ="/gljTestTwo";
+		})
+	
+	})
+	
+</script>
+</html>

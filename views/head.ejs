@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>head</title>
+    <link type="text/css" rel="stylesheet" href="/css/head.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_984827_xy1yhgryt6.css">
+    <script src="http://at.alicdn.com/t/font_969430_k6e7bn9bue.js"></script>
+    <script src="http://at.alicdn.com/t/font_984827_xy1yhgryt6.js"></script>
+</head>
+<body>
+ <div class="header-first">
+        <div class="header-left">
+        	 <%
+            if(login){
+            %>
+            
+                <a>欢迎您！<%= username %></a></li>
+           
+           
+            <%
+            }else{
+            %>
+               <a href="/register">注册</a>
+               <a href="/login">登录</a>
+               <a href="#">
+                <svg aria-hidden="true" style="width:15px;height:15px;">
+                    <use xlink:href="#icon-weixin"></use>
+                </svg>
+                微信登录</a>
+            <%
+            }
+            %>
+        	
+        	
+        	
+            <!--<a href="#">请登录</a>
+            <a href="#">注册</a>
+            <a href="#">
+                <svg aria-hidden="true" style="width:10px;height:10px;">
+                    <use xlink:href="#icon-weixin"></use>
+                </svg>
+                微信登录</a>-->
+        </div>
+        <div class="header-right">
+            <a href="#">
+                <i class="iconfont icon-shouji"></i>
+                手机版
+            </a>
+            <a href="#">
+                    <i class="iconfont icon-aixin"></i>
+                收藏本站</a>
+            <a href="javascript:void(0);">我的资料</a>
+            <a href="javascript:void(0);">我的订单</a>
+            <a href="/cart">
+                <i class="iconfont icon-gouwuche1"></i>
+                购物车</a>
+        </div>
+        <div class="header-second">
+            <div class="left">
+                <img src="/images/pizza/AD0IycmHCBAEGAAgueDS2AUotPKI2AQwQjhC.png">
+                <div>
+                    <p>Caterings</p>
+                    <p>Design</p>
+                </div>
+                <span>上乘食材 非凡品质</span>
+            </div>
+            <div class="right">
+                <div>
+                    <p>订购热线</p>
+                    <p>020-000000000</p>
+                </div>
+               <img src="/images/pizza/AD0IycmHCBAEGAAgueHS2AUo-KXzgQYwXzhY.png">
+               
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

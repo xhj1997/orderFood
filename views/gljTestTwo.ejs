@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style>
+		.cart-bottm{
+				
+				height: 340px;
+				
+				position: relative;
+			}
+			
+			.cart-bottm .subtotal{
+				position: relative;
+			}
+			.cart-bottm .finalPrice{
+				position: relative;
+			}
+			.cart-bottm .subtotal>p{
+				position: absolute;
+				right: 40px;
+			}
+			.cart-bottm .subtotal>p:first-child{
+				top: 20px;
+			}
+			.cart-bottm .subtotal>p:last-child{
+				top: 50px;
+			}
+			.cart-bottm .finalPrice>div>p{
+				display: inline-block;
+				
+			}   
+			.cart-bottm .finalPrice>div>span{
+				font-size: 40px;
+				font-weight: bold;
+				font-family: Arial;
+				color: #ffc001;
+			}
+			.cart-bottm .finalPrice>div{
+				position: absolute;
+				right: 120px;
+				top: 90px;
+			}
+				.cart-bottm .bottom-btn>a {
+				display: inline-block;
+				width: 160px;
+				height: 40px;
+				border: 1px solid #ccc;
+				font-family: "微软雅黑";
+				font-size: 16px;
+				font-weight: normal;
+				text-decoration: none;
+				text-align: center;
+				line-height: 40px;
+				position: absolute;
+				bottom: 0;
+				right: 20px;
+			}
+			
+			.cart-bottm .bottom-btn>a:first-child {
+				background-color: #fff;
+				color: #ffc001;
+				right: 200px;
+			}
+			
+			.cart-bottm .bottom-btn>a:last-child {
+				background-color: #ffc001;
+				color: #fff;
+			}
+			
+			
+	</style>
+</head>
+<body>
+
+	<%for(var i=0;i<arr.length;i++){%>
+	
+
+   <div class="cart-bottm">
+				<div class="layui-form">
+					<table class="layui-table" lay-size="lg">
+							<colgroup>
+							<col width="150">
+							<col width="50">
+							<col width="50">
+							<col width="50">
+							<col width="50">	
+							</colgroup>
+							<thead>
+								<tr>
+									<th>名称</th>
+									<th>价格</th>
+									<th>数量</th>
+									<th>小计</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td> <input type=checkbox value="1"><%= arr[i].Fname %></td>
+									<td>￥<%= arr[i].Fprice %></td>
+									<td>
+										<form>
+											<input type=text name=amount value=1 class="amount" style="width: 45px;">
+											<input type=button value="+" onClick="javascript:this.form.amount.value++;">
+											<input type=button value="-" onClick="javascript:this.form.amount.value--;">
+										</form>
+									</td>
+									<td>￥68.00</td>
+									<td><i class="layui-icon layui-icon-close"></i>删除</td>
+								</tr>
+
+							</tbody>
+						</table>
+						<div class="subtotal">
+						<p>商品总金额 ： ￥68.00</p>
+						<p>优惠金额 ： ￥00.00</p>
+					</div>
+					<div class="finalPrice">
+						<div><p>应付金额:</p><span>￥0.00</span></div>
+				</div>
+				<div class="bottom-btn">
+					<a href="">继续购物</a>
+					<a href="">结算订单</a>
+				</div>
+
+				</div>
+
+   
+  	<%}%>
+</body>
+	<script src="/layui.js"></script>
+</html>

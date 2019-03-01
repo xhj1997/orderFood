@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="/css/layui.css">
+		<script src="/jquery.min.js"></script>
+		<script src="/layui.js"></script>
+		<style type="text/css">
+			.productManage {
+				position: relative;
+			}
+			
+			.caozuo>i {
+				margin: 0 3px;
+			}
+			
+			img {
+				height: 20px;
+			}
+			
+			.one {
+				border-bottom: 1px solid #ccc;
+				padding: 10px 0;
+			}
+			
+			.two {
+				padding: 5px 0;
+			}
+			
+			.mutai {
+				padding: 20px;
+			}
+			
+			.four {
+				padding: 20px;
+				position: fixed;
+				width: 500px;
+				height: 400px;
+				background-color: #ccc;
+				top: 40px;
+				left: 180px;
+			}
+			
+			.btn>input {
+				margin: 0 100px;
+			}
+			
+			.state {
+				display: none;
+			}
+			
+			.state1 {
+				display: none;
+			}
+			
+			.layui-icon-rate-solid {
+				color: red;
+				font-size: 8px;
+				position: relative;
+				top: -4px;
+			}
+			
+			.five {
+				padding: 20px;
+				position: fixed;
+				width: 550px;
+				height: 650px;
+				background-color: #ccc;
+				top: 0px;
+				left: 180px;
+			}
+			
+			.six {
+				position: fixed;
+				top: 200px;
+				left: 240px;
+				width: 300px;
+				height: 100px;
+				background-color: #ccc;
+				display: none;
+			}
+			
+			.first {
+				line-height: 50px;
+				text-align: center;
+			}
+			
+			.second>input {
+				margin: 0 40px;
+			}
+			/* .five>form>div{
+            height: 20px;
+        }*/
+		</style>
+	</head>
+
+	<body>
+		<div class="productManage">
+			<div class="one">
+				<input type="button" name="" value="添加产品" class="layui-btn addfood">
+				<input type="button" name="" value="批量添加" class="layui-btn ">
+				<input type="button" name="" value="批量修改" class="layui-btn changefood">
+				<input type="button" name="" value="设置为" class="layui-btn">
+				<input type="button" name="" value="删除" class="layui-btn delete">
+			</div>
+			<div class="two">
+				<span>名称搜索：</span>
+				<input type="text" name="search" class="search">
+				<button class="btn layui-btn searchBtn">确定</button>
+
+				<span>分类：</span>
+				<input type="text" name="">
+
+				<input type="button" name="" value="选择列" class="layui-btn">
+
+				<a href="javascript:;">高级筛选</a>
+			</div>
+			<div class="three">
+				<table class="layui-table">
+					<thead>
+						<tr>
+							<th><input type="checkbox" name="" class="quanxuan"></th>
+							<th>操作</th>
+							<th>产品名称</th>
+							<th>图片</th>
+							<th>价格</th>
+							<th>分类名称</th>
+							<th>录入时间</th>
+							<th>上架</th>
+							<th>标签</th>
+						</tr>
+					</thead>
+					<tbody class="tbody">
+						<tr>
+							<td><input type="checkbox" name="" class="checkbox1" index='01'></td>
+							<td>
+								<i class="layui-icon layui-icon-share"></i>
+								<i class="layui-icon layui-icon-search"></i>
+								<i class="layui-icon layui-icon-survey"></i>
+							</td>
+							<td class="Pname">
+								<span>奥尔良披萨</span>
+								<img src="images/food/01.png">
+							</td>
+							<td>热卖推荐</td>
+							<td>68.00</td>
+							<td>2018.12.25</td>
+							<td><i class="layui-icon layui-icon-ok"></i></td>
+							<td><i class="layui-icon layui-icon-ok"></i></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- 增加模态框 -->
+			<div class="four state">
+				<form class="layui-form form" action="/addFood" method="POST" enctype="multipart/form-data" onSubmit="return beforeSubmit(this);">
+					<div class="layui-form-item">
+						<label>产品名称<i class="layui-icon layui-icon-rate-solid"></i></label>
+						<input type="text" name="Fname" class="layui-input" required>
+					</div>
+					<div class="layui-form-item">
+						<label>产品分类<i class="layui-icon layui-icon-rate-solid"></i></label>
+						<input type="text" name="Fcategory" class="layui-input" required>
+					</div>
+					<div class="layui-form-item">
+						<label>产品图片<i class="layui-icon layui-icon-rate-solid"></i></label>
+						<input type="file" name="Fimage" class="layui-input" required>
+					</div>
+					<div class="layui-form-item">
+						<label>产品价格<i class="layui-icon layui-icon-rate-solid"></i></label>
+						<input type="text" name="Fprice" class="layui-input" required>
+					</div>
+					<div class="layui-form-item">
+						<label>录入时间<i class="layui-icon layui-icon-rate-solid"></i></label>
+						<input type="text" name="Fdate" class="layui-input" required>
+					</div>
+					<div class="btn">
+						<input type="submit" name="" value="确认添加" class="layui-btn addadd">
+						<input type="button" name="" value="取消添加" class="layui-btn layui-btn-primary">
+					</div>
+				</form>
+			</div>
+
+			<!-- 修改模态框 -->
+			<div class="five state1">
+				<form class="layui-form form" action="/changeFood" method="POST" enctype="multipart/form-data">
+					<div class="layui-form-item">
+						<label>产品ID</label>
+						<input type="text" name="Fid" class="layui-input Fid" readonly>
+					</div>
+					<div class="layui-form-item">
+						<label>产品名称</label>
+						<input type="text" name="Fname" class="layui-input Fname">
+					</div>
+					<div class="layui-form-item">
+						<label>产品分类</label>
+						<input type="text" name="Fcategory" class="layui-input Fcategory">
+					</div>
+					<div class="layui-form-item">
+						<label>产品图片</label>
+						<input type="file" name="Fimage" class="layui-input Fimage">
+					</div>
+					<div class="layui-form-item">
+						<label>产品价格</label>
+						<input type="text" name="Fprice" class="layui-input Fprice">
+					</div>
+					<div class="layui-form-item">
+						<label>录入时间</label>
+						<input type="text" name="Fdate" class="layui-input Fdate">
+					</div>
+					<div class="btn">
+						<input type="submit" name="" value="保存" class="layui-btn addadd">
+						<input type="button" name="" value="取消" class="layui-btn layui-btn-primary">
+					</div>
+				</form>
+
+			</div>
+
+			<!-- 删除模态框 -->
+			<div class="six state2">
+				<div class="first">
+					<h2>您确定要删除此项菜品吗？</h2>
+				</div>
+				<div class="second">
+					<input type="button" name="" value="确定" class='layui-btn trueDelete'>
+					<input type="button" name="" value="取消" class="layui-btn layui-btn-primary cancle">
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		$.get('/productManage/save', function(data) {
+			var str = '';
+			console.log(data);
+
+			for(var i = 0; i < data.length; i++) {
+				// console.log(data[i]);
+				str += '<tr>' +
+					'<td class="checkbox"><input type="checkbox" name="" index="' + data[i].Fid + '"></td>' +
+					'<td class="caozuo">' +
+					'<i class="layui-icon layui-icon-share"></i>' +
+					'<i class="layui-icon layui-icon-search"></i>' +
+					'<i class="layui-icon layui-icon-survey"></i>' +
+					'</td>' +
+					'<td class="Pname">' +
+					'<span>' + data[i].Fname + '</span>' +
+					'</td>' +
+					'<td class="Pimage">' + '<img src="' + data[i].Fimage + '">' + '</td>' +
+					'<td class="Pprice">' + data[i].Fprice + '.00' + '</td>' +
+					'<td class="Pcategory">' + data[i].Fcategory + '</td>' +
+					'<td class="Pdate">2018.12.25</td>' +
+					'<td><i class="layui-icon layui-icon-ok"></i></td>' +
+					'<td><i class="layui-icon layui-icon-ok"></i></td>' +
+					'<td></td>' +
+					'</tr>';
+			}
+			$('.tbody').html(str);
+			// console.log(str);
+			
+//			console.log($('.tbody .Pname').length);
+//			for(var i=0; i<$('.tbody .Pname').length; i++){
+//				console.log($('.tbody .Pname')[i].innerText);
+//			}
+//			
+			
+			//发现食物
+			$('.searchBtn').click(function() {
+		    var value = $('.search').val();
+		    console.log(value);
+		    var str = '';
+		    console.log('212');
+		    for(var i=0; i<$('.tbody .Pname').length; i++){	
+		    	
+		     	if($($('.tbody .Pname')[i]).text().indexOf(value) != -1){
+		     		
+		     		/*console.log('true');
+		     		console.log($($('.tbody .Pname')[i]).parent().prop("outerHTML"));*/
+		     		str += $($('.tbody .Pname')[i]).parent().prop("outerHTML");
+//		     		console.log(str);
+		     		
+		     		
+		     	}
+				/*console.log($($('.tbody .Pname')[i]).text());
+				console.log(this.value);*/
+			}
+//		    console.log(str);
+		    $('.tbody').html(str);
+		    
+		    
+		    
+		     
+		 	});
+
+
+			//多选框的点击
+			$('.tbody>tr>td>input').click(function() {
+				// console.log('input');
+				var state = $(this).attr('checked');
+				if(state) {
+					var id = $(this).attr('index');
+					var rename = $(this).parent().siblings('.Pname').text();
+					var recategory = $(this).parent().siblings('.Pcategory').text();
+					var reimage = $(this).parent().siblings('.Pimage').find('img').attr('src');
+					var reprice = $(this).parent().siblings('.Pprice').text();
+					var redate = $(this).parent().siblings('.Pdate').text();
+					console.log(id, rename, recategory, reimage, reprice, redate);
+
+					var state1 = true;
+
+					function trueState1() {
+						if(state1) {
+							$('.state1').css('display', 'block');
+							state1 = false;
+						} else {
+							$('.state1').css('display', 'none');
+							state1 = true;
+						}
+					}
+					//修改
+					$('.changefood').click(function() {
+						trueState1();
+						$('.Fname').val(rename);
+						$('.Fcategory').val(recategory);
+						$('.Fid').val(id);
+						// $('.Fimage').val(reimage);
+						$('.Fprice').val(reprice);
+						$('.Fdate').val(redate);
+					})
+					$('.five .btn>input').click(function() {
+						trueState1();
+					})
+
+					var state2 = true;
+
+					function trueState2() {
+						if(state2) {
+							$('.state2').css('display', 'block');
+							state2 = false;
+						} else {
+							$('.state2').css('display', 'none');
+							state2 = true;
+						}
+					}
+
+					//删除
+					$('.delete').click(function() {
+						console.log('delete');
+						trueState2();
+					})
+					$('.cancle').click(function() {
+						trueState2();
+					})
+					$('.trueDelete').click(function() {
+						trueState2();
+						$.post('/deleteFood', {
+							id: id
+						}, function(data) {
+							console.log(data);
+						})
+
+					})
+
+				}
+			})
+		})
+
+		//全选，全不选
+		$('.quanxuan').click(function() {
+			var state = $('.quanxuan').attr('checked');
+			if(state == 'checked') {
+				$('.tbody input').attr('checked', true);
+				// console.log('true');
+			} else {
+				$('.tbody input').attr('checked', false);
+			}
+			// console.log($('.quanxuan').attr('checked'));
+			// console.log($('.quanxuan').checked);
+		})
+
+		//模态框状态
+		var state = true;
+
+		function trueState() {
+			if(state) {
+				$('.state').css('display', 'block');
+				state = false;
+			} else {
+				$('.state').css('display', 'none');
+				state = true;
+			}
+		}
+
+		//添加
+		$('.addfood').click(function() {
+			trueState();
+		});
+		$('.four .btn>input').click(function() {
+			trueState();
+		})
+
+		//根据名称查找数据
+		/*$('.searchBtn').click(function() {
+			var value = $('.search').val();
+			$.post('/findFood', {value: value}, function(data) {
+				console.log(data);
+				var str = '';
+				str += '<tr>' +
+					'<td class="checkbox"><input type="checkbox" name="" index="' + data.Fid + '"></td>' +
+					'<td class="caozuo">' +
+					'<i class="layui-icon layui-icon-share"></i>' +
+					'<i class="layui-icon layui-icon-search"></i>' +
+					'<i class="layui-icon layui-icon-survey"></i>' +
+					'</td>' +
+					'<td class="Pname">' +
+					'<span>' + data.Fname + '</span>' +
+					'</td>' +
+					'<td class="Pimage">' + '<img src="' + data.Fimage + '">' + '</td>' +
+					'<td class="Pprice">' + data.Fprice + '.00' + '</td>' +
+					'<td class="Pcategory">' + data.Fcategory + '</td>' +
+					'<td class="Pdate">2018.12.25</td>' +
+					'<td><i class="layui-icon layui-icon-ok"></i></td>' +
+					'<td><i class="layui-icon layui-icon-ok"></i></td>' +
+					'<td></td>' +
+					'</tr>';
+				$('.tbody').html(str);
+			})
+			
+
+		})
+*/
+		
+		function beforeSubmit(form) {
+			if(form.Fname.value == '') {
+				alert('菜名不能为空！');
+				form.Fname.focus();
+				return false;
+			}
+			if(form.Fcategory.value == '') {
+				alert('分类不能为空！');
+				form.Fcategory.focus();
+				return false;
+			}
+			if(form.Fimage.value == '') {
+				alert('产品图片不能为空！');
+				form.Fimage.focus();
+				return false;
+			}
+			if(form.Fprice.value == '') {
+				alert('价格不能为空！');
+				form.Fprice.focus();
+				return false;
+			}
+			if(form.Fdate.value == '') {
+				alert('录入时间不能为空！');
+				form.Fdate.focus();
+				return false;
+			}
+
+			return true;
+		}
+	</script>
+
+</html>

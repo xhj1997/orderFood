@@ -1,0 +1,430 @@
+<html>
+	<meta charset="utf-8"/>
+	<head>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			.container{
+				position: relative;
+				width:1170px;
+				margin: 100px;
+				z-index:0;
+			}
+			.comment{
+				width: 100%;
+				height: 200px;
+			}
+			.comment span{
+				display: inline-block;
+				width: 30%;
+				height: 8vh;
+			}
+			.comment span input{
+				display: inline-block;
+				padding: 3px;
+				border-radius:5px;
+			}
+			.msgTextarea{
+				display: block;
+				margin-top: 15px;
+				height: 320px;
+			}
+			.msgTextarea .sumbit{
+				display: inline-block;
+			    width: 200px;
+			    height: 6vh;
+			    background: orange;
+			    border: none;
+			    margin-left: 60px;
+			    text-align: center;
+			    line-height: 6vh;
+			    text-decoration: none;
+			    color: #333;
+			}
+			.msgTextarea .btn{
+				display: inline-block;
+			    width: 200px;
+			    height: 6vh;
+			    background: orange;
+			    border: none;
+			    margin-left: 60px;
+			    text-align: center;
+			    line-height: 6vh;
+			    text-decoration: none;
+			    color: #333;
+			}
+			.lyan{
+				margin-top: 80px;
+			}
+			.pl{
+				margin-top: 20px;
+			}
+			.pl-item{
+				width:100%;
+				margin-top: 20px;
+				overflow: hidden;
+				margin-bottom: 15px;
+			}
+			.fl{
+				float: left;
+			}
+			.fr{
+				float: right;
+			}
+			hr{
+				margin-bottom: 20px;
+			}
+			.msgHeadImgPanel{
+				margin-right: 20px;
+			}
+			.msgTime{
+				position: absolute;
+				right: 100px;
+			}
+			.hy_head {
+				height: 125px;
+			}
+			
+			.hy_footer {
+				height: 260px;
+				margin-top: 800px;
+			}
+			
+			.hy_side {
+				width: 8vh;
+				height: 100%+370px;
+				z-index: 999;
+				margin-top: -30px;
+			}
+			
+			
+			.img{
+				height: 370px;
+			    background-image:url(/images/recommend/re1.jpg);
+			    background-position: 50% 50%;
+    			background-repeat: no-repeat;
+    			z-index: 1;
+			}
+			
+			*{
+			    margin: 0;
+			    padding: 0;
+			}
+			body{
+			    background-color: #ffffff;
+			}
+			.header-first{
+			    height: 30px;
+			    background-color: #333;
+			    width: 100%;
+			/*    z-index: 5;*/
+			}
+			.header-left{
+			    position: relative;
+			    float: left;
+			    left: 100px;
+			    line-height: 30px;
+			}
+			.header-left a{
+			    font-size: 14px;
+			    margin-left: 10px;
+			    text-decoration: none;
+			    color: #ccc;
+			}
+			.header-right{
+			    position: relative;
+			    float: right;
+			    right: 100px;
+			    line-height: 30px;
+			}
+			.header-right a{
+			    font-size: 14px;
+			    margin-left: 10px;
+			    text-decoration: none;
+			    color: #ccc;
+			}
+			.header-right a i{
+			    font-size: 15px;
+			}
+			.header-second{
+			    position: relative;
+			    top: 30px;
+			    height: 95px;
+			    background-color: #202020;
+			}
+			.left{
+			    float: left;
+			    position: absolute;
+			    height: 70px;
+			    left: 100px;
+			    width: 300px;
+			    line-height: 50px;
+			}
+			.left img{
+			    position: absolute;
+			    float: left;
+			    width: 50px;
+			    height: 50px;
+			    top: 10px;
+			    margin-right: 15px;
+			}
+			.left div{
+			    margin-left: 70px;
+			}
+			.left div p:first-child{
+			    float: left;
+			    margin-right: 10px;
+			    color: rgb(255, 192, 1);
+			    font-weight: 700;
+			    font-size: 18px;
+			}
+			.left div p:last-child{
+			    float: left;
+			    margin-right: 10px;
+			    color: rgb(89, 89, 89);
+			    font-weight: 700;
+			    font-size: 18px;
+			}
+			.left span{
+			    position: absolute;
+			    color:rgb(243, 211, 152);
+			    font-size: 12px;
+			    left: 70px;
+			    top: 20px;
+			    margin-top: 10px;
+			}
+			.right{
+			    height: 70px;
+			    position: absolute;
+			    right: 70px;
+			}
+			.right img{
+			    float: right;
+			    width: 80px;
+			    height: 80px;
+			}
+			.right div{
+			    float: left;
+			    line-height: 10px;
+			    margin-top: 20px;
+			    margin-right: 15px;
+			}
+			.right div p:first-child{
+			    color:rgb(255, 192, 1);
+			    font-size: 16px;
+			    margin-bottom: 10px;
+			}
+			.right div p:last-child{
+			    color:rgb(243, 211, 152);
+			    font-size: 14px;
+			}
+			.header-third{
+			    position: relative;
+			    top: 25px;
+			    height: 30px;
+			    background-color: #333;
+			}
+</style>
+<link rel="stylesheet" href="http://at.alicdn.com/t/font_984827_xy1yhgryt6.css">
+    <script src="http://at.alicdn.com/t/font_969430_k6e7bn9bue.js"></script>
+    <script src="http://at.alicdn.com/t/font_984827_xy1yhgryt6.js"></script>
+<script src="jquery.min.js"></script>
+
+<script type="text/javascript">
+	function saveComment(){
+		var obj={};
+		 obj.username = $('#username').val();
+		 obj.useid = $('#userid').val();
+		 obj.message = $('#reqContent').val();
+//		 console.log(obj);
+		 
+	 	//发送ajax请求到node服务器
+        $.post("/recommend/save",obj,function(data){
+
+            if(data.code == -1){
+			   console.log(data);
+            }else {
+               console.log(data);
+     }      
+     })
+        }         
+</script>
+	</head>
+	<body>
+		 <div class="header-first">
+        <div class="header-left">
+        	 <%
+            if(login){
+            %>
+            
+                <a>欢迎您！<%= username %></a></li>
+           
+           
+            <%
+            }else{
+            %>
+               <a href="/register">注册</a>
+               <a href="/login">登录</a>
+               <a href="#">
+                <svg aria-hidden="true" style="width:15px;height:15px;">
+                    <use xlink:href="#icon-weixin"></use>
+                </svg>
+                微信登录</a>
+            <%
+            }
+            %>
+        	
+        	
+        	
+            <!--<a href="#">请登录</a>
+            <a href="#">注册</a>
+            <a href="#">
+                <svg aria-hidden="true" style="width:10px;height:10px;">
+                    <use xlink:href="#icon-weixin"></use>
+                </svg>
+                微信登录</a>-->
+        </div>
+        <div class="header-right">
+            <a href="#">
+                <i class="iconfont icon-shouji"></i>
+                手机版
+            </a>
+            <a href="#">
+                    <i class="iconfont icon-aixin"></i>
+                收藏本站</a>
+            <a href="#">我的资料</a>
+            <a href="#">我的订单</a>
+            <a href="#">
+                <i class="iconfont icon-gouwuche1"></i>
+                购物车</a>
+        </div>
+        <div class="header-second">
+            <div class="left">
+                <img src="/images/pizza/AD0IycmHCBAEGAAgueDS2AUotPKI2AQwQjhC.png">
+                <div>
+                    <p>Caterings</p>
+                    <p>Design</p>
+                </div>
+                <span>上乘食材 非凡品质</span>
+            </div>
+            <div class="right">
+                <div>
+                    <p>订购热线</p>
+                    <p>020-000000000</p>
+                </div>
+               <img src="/images/pizza/AD0IycmHCBAEGAAgueHS2AUo-KXzgQYwXzhY.png">
+               
+            </div>
+        </div>
+    </div>
+			<div class="hy_side" style="float: right;">
+				<%include side.ejs%>
+			</div>
+			<div class="img"></div>
+			
+		<div class="container">
+			
+	<div class="comment">	
+		<form>	
+				<span id="msgusername">
+					<label>	姓名:</label>
+					<input type="hidden" name="userid" id="userid" value="12223">
+					<input type="text" name="username" id="username" disabled="" value="<%=username%>">
+				</span>
+				
+				<span id="msgemail">
+					<label>	邮箱:</label>
+					<input type="text" name="email"  value="<%=email%>">
+					
+				</span>
+				
+				<span id="msgphone">
+					<label>	电话:</label>
+					<input type="text" name="phone"  value="<%=phone%>">
+				</span>
+					<div class="msgTextarea">
+						<label for="">内容:</label>
+						<textarea class="g_textarea" id="reqContent" rows="3" cols="50" style="width:250px;height:80px;resize: none;" placeholder="留言需审核后才会显示" value="${recommend.message}" maxlength="10000"></textarea>
+						<br /><br />
+						<a href="javascript:saveComment();" class="sumbit" id="sumbit">保存</a>
+						<button class="btn" id="btn">提交</button>
+					</div>
+				
+		</form>		
+	</div>
+			
+			<div class="lyan">
+				<h5>留言</h5>
+				<div class="pl" id="pl">
+					
+				
+					
+					
+					
+					
+					</div>
+			</div>
+		</div>
+		<div class="hy_footer">
+				<%include footer.ejs%>
+			</div>
+	</body>
+	<script type="text/javascript">
+		$(function () {
+            //添加评论
+            $("#btn").click(function () {
+            	   	console.log("xxxx");
+                //判断是否为空
+                  if ($("#username").val() == "" || $("#reqContent").val() == "") {
+                    alert("昵称和评论不能为空！");
+                    return true;
+                }
+                  var oDate = new Date();
+                  var str = oDate.getFullYear()+"年"+(oDate.getMonth()+1)+"月"+oDate.getDate()+"日"+oDate.getHours()+":"+oDate.getMinutes()+":"+oDate.getSeconds();
+                   console.log(str);
+                  var html="";
+                  html+="<div class='pl-item'>";
+                  html+="<hr />";
+                  html+="<div class='msgHeadImgPanel fl'>";
+                  html+="<img class='msgHeadImg' src='//0.ss.faisys.com/image/msgBoard/hymm.png'>";
+                  html+="</div>";
+                  html+="<div class='msgBoardPanel fl'>";
+                  html+="<div class='msgTitle fl'>";
+                  html+="<div style='padding-right:6px; font-size:14px;width:68px' class='msgUser fl' title='011029'>";
+                  html+="011029";
+                  html+="</div>";
+                  html+="<span class='user_level_name fl' title='普通会员'>普通会员</span>";
+                  html+="<div class='msgTime'>"
+                  html+=str;
+                  html+="</div>";
+                  html+="</div>";
+                  html+="<div class='msgContent' style='margin-top:25px!important;'>";
+                  html+="<div class='userMsg' >";
+                  html+=$('#reqContent').val();
+                  html+="</div>";
+                  html+="</div>";
+                  html+="</div>";
+                  html+="</div>"
+                //将输入的 昵称 评论 追加到id为olid中
+                $("#pl").append(html);
+                return false;
+               
+                
+             })
+    })
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+

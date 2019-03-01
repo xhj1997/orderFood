@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>订单管理</title>
+    <link rel="stylesheet" href="/css/layui.css">
+    <script src="/jquery.min.js"></script>
+    <script src="/layui.js"></script>
+    <style>
+        .han_Order {
+            width: 1130px;
+        }
+        .han_select{
+            padding: 5px 15px 2px;
+            overflow: hidden;
+        }
+        .fr{
+            float: right;
+        }
+        .fl{
+            float: left;
+        }
+        .han_select .searchInfo.orderNum{
+            vertical-align: middle;
+            padding: 8px;
+        }
+        .han_select .orderNum select{
+            height: 25px;
+        }
+        .han_select .orderNum input{
+            height: 20px;
+        }
+        .han_list{
+            border:1px solid #ccc;
+            margin:20px 0;
+        }
+        .han_list .han_listTop{
+            height: 20px;
+            background-color: #f5f5f5;
+            padding: 3px 16px;
+        }
+        .han_list .han_listBottom{
+            padding: 0px 0px;
+        }
+        .han_list .han_listBottom img{
+            width: 50px;
+        }
+        .listitem{
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 15px;
+        }
+        .han_list .han_listBottom .listitem1{
+            
+            padding-left: 40px;
+            width: 240px;
+        }
+        .han_list .han_listBottom .listitem2{
+            width: 166px;
+        }
+        .han_list .han_listBottom .listitem3{
+            width: 156px;
+        }
+        .han_list .han_listBottom .listitem4{
+            width: 156px;
+        }
+        .han_list .han_listBottom .listitem5{
+            width: 156px;
+        }
+        .han_list .han_listBottom .listitem6{
+            width: 105px;
+        }
+        .han_list .han_listBottom .listitem7{
+            width: 105px;
+        }
+        .layui-tab{
+            border-bottom: 1px solid #ccc;
+        }
+        .han_bottom .listitem button{
+            height:28px;line-height:28px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="han_Order">
+        <div class="han_select">
+            <span class="searchInfo orderNum fl">
+                <select name="" id="" onchange="change()">
+                    <option value="">订单编号</option>
+                    <option value="">产品名称</option>
+                    <option value="">用户账号</option>
+                    <option value="">用户姓名</option>
+                </select>
+                <input type="text" class="search"> &nbsp; &nbsp;
+            </span>
+            <span class="searchInfo fl">
+                时间 ：
+                <span class="layui-form">
+                    <span class="layui-form-item">
+                        <div class="layui-inline">
+                            <input type="text" class="layui-input test-item" value="2018-12-25">
+                        </div> - &nbsp;
+                        <div class="layui-inline">
+                            <input type="text" class="layui-input test-item" value="2018-12-28">
+                        </div>
+                    </span>
+                </span>
+            </span>
+        </div>
+
+        <div class="layui-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this">所有订单</li>
+                <li>待付款</li>
+                <li>待发货</li>
+                <li>已发货</li>
+                <li>待结算</li>
+                <li>交易完成</li>
+                <li>交易关闭</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show zhuye">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>产品名称</th>
+                                <th>价格*数量</th>
+                                <th>用户账号</th>
+                                <th>用户姓名</th>
+                                <th>订单金额</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <div class="han_list">
+                        <div class="han_listTop">
+                            <span><input type="checkbox"></span> &nbsp;
+                            <span>2018-12-26 19:44:55</span> &nbsp; &nbsp;
+                            <span>订单编号 ：1546049793854
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/001.png" alt=""> &nbsp;
+                                夏威夷阳光披萨 </span>
+                            <span class="listitem listitem2">￥78.00*5</span>
+                            <span class="listitem listitem3">hanwjing</span>
+                            <span class="listitem listitem4">hanwjing</span>
+                            <span class="listitem listitem5">￥390.00货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/002.png" alt=""> &nbsp;
+                                热狗披萨 </span>
+                            <span class="listitem listitem2">￥68.00*5</span>
+                            <span class="listitem listitem3">hanwjing</span>
+                            <span class="listitem listitem4">hanwjing</span>
+                            <span class="listitem listitem5">￥340.00 货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="han_list">
+                        <div class="han_listTop">
+                            <span><input type="checkbox"></span> &nbsp;
+                            <span>2018-12-27 13:44:55</span> &nbsp; &nbsp;
+                            <span>订单编号 ：1546049793975
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/003.png" alt=""> &nbsp;
+                                双鲜披萨 </span>
+                            <span class="listitem listitem2">￥100.00*1</span>
+                            <span class="listitem listitem3">gelj</span>
+                            <span class="listitem listitem4">gelj</span>
+                            <span class="listitem listitem5">￥100.00货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="han_list">
+                        <div class="han_listTop">
+                            <span><input type="checkbox"></span> &nbsp;
+                            <span>2018-12-29 10:32:20</span> &nbsp; &nbsp;
+                            <span>订单编号 ： 1546049794510
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/cheese.png" alt=""> &nbsp;
+                                乳酪精选披萨 </span>
+                            <span class="listitem listitem2">￥68.00*2</span>
+                            <span class="listitem listitem3">gett</span>
+                            <span class="listitem listitem4">gett</span>
+                            <span class="listitem listitem5">￥136.00货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/sheep.png" alt=""> &nbsp;
+                                羊小排披萨 </span>
+                            <span class="listitem listitem2">￥65.00*3</span>
+                            <span class="listitem listitem3">gett</span>
+                            <span class="listitem listitem4">gett</span>
+                            <span class="listitem listitem5">￥195.00 货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/004.png" alt=""> &nbsp;
+                                新奥尔良披萨 </span>
+                            <span class="listitem listitem2">￥98.00*5</span>
+                            <span class="listitem listitem3">gett</span>
+                            <span class="listitem listitem4">gett</span>
+                            <span class="listitem listitem5">￥490.00 货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>产品名称</th>
+                                <th>价格*数量</th>
+                                <th>用户账号</th>
+                                <th>用户姓名</th>
+                                <th>订单金额</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <div class="han_list">
+                        <div class="han_listTop">
+                            <span><input type="checkbox"></span> &nbsp;
+                            <span>2018-12-26 19:44:55</span> &nbsp; &nbsp;
+                            <span>订单编号 ：1546049793854
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/001.png" alt=""> &nbsp;
+                                夏威夷阳光披萨 </span>
+                            <span class="listitem listitem2">￥78.00*5</span>
+                            <span class="listitem listitem3">hanwjing</span>
+                            <span class="listitem listitem4">hanwjing</span>
+                            <span class="listitem listitem5">￥390.00货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/002.png" alt=""> &nbsp;
+                                热狗披萨 </span>
+                            <span class="listitem listitem2">￥68.00*5</span>
+                            <span class="listitem listitem3">hanwjing</span>
+                            <span class="listitem listitem4">hanwjing</span>
+                            <span class="listitem listitem5">￥340.00 货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="han_list">
+                        <div class="han_listTop">
+                            <span><input type="checkbox"></span> &nbsp;
+                            <span>2018-12-27 13:44:55</span> &nbsp; &nbsp;
+                            <span>订单编号 ：1546049793975
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/003.png" alt=""> &nbsp;
+                                双鲜披萨 </span>
+                            <span class="listitem listitem2">￥100.00*1</span>
+                            <span class="listitem listitem3">gelj</span>
+                            <span class="listitem listitem4">gelj</span>
+                            <span class="listitem listitem5">￥100.00货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="han_list">
+                        <div class="han_listTop">
+                            <span><input type="checkbox"></span> &nbsp;
+                            <span>2018-12-29 10:32:20</span> &nbsp; &nbsp;
+                            <span>订单编号 ： 1546049794510
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/cheese.png" alt=""> &nbsp;
+                                乳酪精选披萨 </span>
+                            <span class="listitem listitem2">￥68.00*2</span>
+                            <span class="listitem listitem3">gett</span>
+                            <span class="listitem listitem4">gett</span>
+                            <span class="listitem listitem5">￥136.00货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/sheep.png" alt=""> &nbsp;
+                                羊小排披萨 </span>
+                            <span class="listitem listitem2">￥65.00*3</span>
+                            <span class="listitem listitem3">gett</span>
+                            <span class="listitem listitem4">gett</span>
+                            <span class="listitem listitem5">￥195.00 货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/004.png" alt=""> &nbsp;
+                                新奥尔良披萨 </span>
+                            <span class="listitem listitem2">￥98.00*5</span>
+                            <span class="listitem listitem3">gett</span>
+                            <span class="listitem listitem4">gett</span>
+                            <span class="listitem listitem5">￥490.00 货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-tab-item">空空空空如也~</div>
+                <div class="layui-tab-item">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>产品名称</th>
+                                <th>价格*数量</th>
+                                <th>用户账号</th>
+                                <th>用户姓名</th>
+                                <th>订单金额</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <div class="han_list">
+                        <div class="han_listTop">
+                            <span><input type="checkbox"></span> &nbsp;
+                            <span>2018-12-26 19:44:55</span> &nbsp; &nbsp;
+                            <span>订单编号 ：1546049793854
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/001.png" alt=""> &nbsp;
+                                夏威夷阳光披萨 </span>
+                            <span class="listitem listitem2">￥78.00*5</span>
+                            <span class="listitem listitem3">hanwjing</span>
+                            <span class="listitem listitem4">hanwjing</span>
+                            <span class="listitem listitem5">￥390.00货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/002.png" alt=""> &nbsp;
+                                热狗披萨 </span>
+                            <span class="listitem listitem2">￥68.00*5</span>
+                            <span class="listitem listitem3">hanwjing</span>
+                            <span class="listitem listitem4">hanwjing</span>
+                            <span class="listitem listitem5">￥340.00 货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="han_list">
+                        <div class="han_listTop">
+                            <span><input type="checkbox"></span> &nbsp;
+                            <span>2018-12-27 13:44:55</span> &nbsp; &nbsp;
+                            <span>订单编号 ：1546049793975
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/003.png" alt=""> &nbsp;
+                                双鲜披萨 </span>
+                            <span class="listitem listitem2">￥100.00*1</span>
+                            <span class="listitem listitem3">gelj</span>
+                            <span class="listitem listitem4">gelj</span>
+                            <span class="listitem listitem5">￥100.00货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="han_list">
+                        <div class="han_listTop">
+                            <span><input type="checkbox"></span> &nbsp;
+                            <span>2018-12-29 10:32:20</span> &nbsp; &nbsp;
+                            <span>订单编号 ： 1546049794510
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/cheese.png" alt=""> &nbsp;
+                                乳酪精选披萨 </span>
+                            <span class="listitem listitem2">￥68.00*2</span>
+                            <span class="listitem listitem3">gett</span>
+                            <span class="listitem listitem4">gett</span>
+                            <span class="listitem listitem5">￥136.00货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/sheep.png" alt=""> &nbsp;
+                                羊小排披萨 </span>
+                            <span class="listitem listitem2">￥65.00*3</span>
+                            <span class="listitem listitem3">gett</span>
+                            <span class="listitem listitem4">gett</span>
+                            <span class="listitem listitem5">￥195.00 货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                        <div class="han_listBottom">
+                            <span class="listitem listitem1"><img src="/images/recommend/004.png" alt=""> &nbsp;
+                                新奥尔良披萨 </span>
+                            <span class="listitem listitem2">￥98.00*5</span>
+                            <span class="listitem listitem3">gett</span>
+                            <span class="listitem listitem4">gett</span>
+                            <span class="listitem listitem5">￥490.00 货到付款</span>
+                            <span class="listitem listitem6">待付款</span>
+                            <span class="listitem listitem7">
+                                <i class="layui-icon layui-icon-search"></i>
+                                <i class="layui-icon layui-icon-set-fill"></i>
+                                <i class="layui-icon layui-icon-form"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-tab-item">内容5</div>
+                <div class="layui-tab-item">内容6</div>
+                <div class="layui-tab-item">内容7</div>
+            </div>
+        </div>
+
+        <div class="han_bottom">
+            <div class="listitem fl">
+                <span>每页显示订单数量：</span>
+                <select name="" id="">
+                    <option value="">10</option>
+                    <option value="">20</option>
+                    <option value="">30</option>
+                    <option value="">40</option>
+                </select> &nbsp; &nbsp;
+                <span> 本页共 3 个 总共 3 个 总金额为 ￥2546.00</span>
+            </div>
+            <div class="listitem fr">
+                <span><button class="layui-btn layui-btn-primary">上一页</button></span>
+                &nbsp;
+                <a href="" style="color:blue;">1</a> &nbsp;
+                <span><button class="layui-btn layui-btn-primary">下一页</button></span>
+                &nbsp;
+                <span>共 1 页 ，到第 <input type="number" style="width:35px;">
+                    页</span> &nbsp;
+                <span><button class="layui-btn layui-btn-primary">确定</button></span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function () {
+        var element = layui.element;
+        //…
+    });
+    layui.use('laydate', function () {
+        var laydate = layui.laydate;
+        lay('.test-item').each(function () {
+            laydate.render({
+                elem: this
+                , trigger: 'click'
+            });
+        });
+    });
+    $(".search").bind("input propertychange", function () {
+        var value = this.value;
+        var text = change();
+        if (text == '用户账号' || text == '用户姓名') {
+            for(var i=0;i<$(".zhuye .han_list").length;i++){
+                var $list = $($(".zhuye .han_list")[i]).find("div.han_listBottom");
+                console.log($list.length);
+                for(var j=0;j<$list.length;j++){
+                    var $text=$($list[j]).find("span.listitem3").html();
+                    if($text == value){
+                        $($list[j]).parent().show().siblings().hide();
+                    }
+                }
+            }
+        }
+    })
+
+
+
+
+    function change() {
+        var select = document.querySelector("select");
+        var index = select.selectedIndex;
+        var text = select.options[index].text;
+        return text;
+    }
+
+
+
+</script>
+
+</html>
